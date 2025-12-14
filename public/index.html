@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="overlay" style="display:none;">
+    <img src="" alt="warning" class="warning">
+</div>
+<button class="btn"  >button</button>
+
+<script>
+    const messages = [
+        "why you click me",
+        "tell me why",
+        "screw you then",
+        "if you click me 10 times something bad will happen",
+        "1","2","3","4","5","6","7","8","9",
+        "Im warning you dont click it a tenth time",
+        "10",
+        "that is gonna stay there you now have to stare at it",
+        "Click the J*b Application",
+        "why are you clicking me click the Application",
+        "bro stop clicking me",
+        "im giving you one more chance",
+        "DO YOUR WORK"
+    ];
+
+    let count = 0;
+    const box = document.querySelector('.btn');
+
+    box.addEventListener('click', () => {
+        box.textContent = messages[count];
+        count++;
+        if (count === 21) {
+            window.location.replace("https://classroom.google.com");
+
+        }
+
+        if (count === 16) {
+            const overlay = document.getElementById("overlay");
+            const img = overlay.querySelector("img");
+
+            img.src = "img/warn.webp";
+            overlay.style.display = "block";
+
+        }
+    });
+
+</script>
+<script>
+    let warnClicks = 0;
+    const warningImg = document.querySelector('.warning');
+
+    warningImg.addEventListener('click', () => {
+        warnClicks++;
+        if (warnClicks === 1) {
+            window.location.replace("https://www.linkedin.com/jobs/");
+        }
+    });
+</script>
+
+<script rel="script" src="index.js"></script>
+</body>
+</html>
